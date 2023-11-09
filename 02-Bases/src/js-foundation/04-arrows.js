@@ -6,10 +6,7 @@ const users = [
 const getUserById = (id, callback) => {
   const user = users.find((user) => user.id === id);
   // console.log({ user }); //Se imprime asi porque seria llamar a user:user por eso mismo se puede abreviar.
-  if (!user) {
-    return callback("Usuario no encontrado!");
-  }
-  return callback(null, user);
+  user ? callback(null, user) : callback("Usuario no encontrado!");
 };
 
 //getUserById(1); //Llamamos a la funcion pasandole un ID
